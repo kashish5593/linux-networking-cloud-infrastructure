@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name _;
+    root /var/www/linux-cloud-lab;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    access_log /var/log/nginx/linux-cloud-lab.access.log;
+    error_log  /var/log/nginx/linux-cloud-lab.error.log;
+}
